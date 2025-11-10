@@ -73,3 +73,45 @@
   - Adopt optional typing (typing module) and static analysis to improve maintainability.
   - Optimize algorithms, data structures, and concurrency where appropriate.
   - Profile and apply targeted optimizations; handle errors gracefully.
+
+# 1.2 Variable types and expressions
+
+## 1.2.1 Variables as Abstractions
+
+Variables: take us from memory address to meaningful names
+
+## 1.2.2 Types in Python PL
+
+Dynamic, strong and Optionally static typing
+
+### Revision — Variables & Types (short)
+- Variable: a name that refers to an object/value. Assignment binds a name to an object (e.g. `x = 10`).
+- Python is dynamically typed (types checked at runtime) and strongly typed (no implicit silent conversions between incompatible types).
+- Common built-in types:
+  - Numbers: `int`, `float`, `complex` (immutable)
+  - Boolean: `bool` (immutable)
+  - Text: `str` (immutable)
+  - Sequences: `list` (mutable), `tuple` (immutable), `range` (immutable)
+  - Sets and frozensets: `set` (mutable), `frozenset` (immutable)
+  - Mappings: `dict` (mutable)
+  - None: `NoneType` (singleton representing absence of value)
+
+- Mutability notes:
+  - Mutable objects (e.g. lists, dicts, sets) can be changed in-place; aliases (multiple names referencing same object) can observe changes.
+  - Immutable objects (e.g. ints, tuples, strings) cannot be changed in-place; operations create new objects.
+
+- Simple examples:
+  - `x = 5          # int`
+  - `s = "hello"   # str`
+  - `a = [1,2,3]    # list (mutable)`
+  - `t = (1,2,3)    # tuple (immutable)`
+
+- Common operations:
+  - Arithmetic: `+`, `-`, `*`, `/`, `//`, `%`, `**`.
+  - Sequence operations: indexing `s[i]`, slicing `s[a:b]`, concatenation, `len()`.
+  - Mapping operations: `d[k] = v`, `d.get(k, default)`, `k in d`.
+
+- Quick tips:
+  - Use `is` for identity checks, `==` for value equality.
+  - Prefer immutable objects for keys in dictionaries and elements of sets.
+  - Use list/dict comprehensions for clear and concise construction.
