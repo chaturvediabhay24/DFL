@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="280" viewBox="0 0 1000 280">
+  <style>
+    .box { fill: #ffffff; stroke: #2b2b2b; stroke-width: 2; rx: 12; }
+    .title { font: 600 18px 'Arial', sans-serif; fill: #111111; }
+    .label { font: 400 14px 'Arial', sans-serif; fill: #333333; }
+    .small { font: 400 12px 'Arial', sans-serif; fill: #666666; }
+    .arrow { fill: #2b2b2b; }
+    .bg { fill: #f7fbff; }
+  </style>
+
+  <!-- background -->
+  <rect class="bg" x="0" y="0" width="1000" height="280" rx="6" />
+
+  <!-- Box 1: Tool call -->
+  <g transform="translate(40,40)">
+    <rect class="box" width="200" height="140" />
+    <text class="title" x="20" y="40">1) Tool call</text>
+    <text class="label" x="20" y="70">Agent calls a tool (search, read file, run code)</text>
+    <text class="small" x="20" y="100">Result: full tool output returned</text>
+    <!-- small wrench icon -->
+    <g transform="translate(150,18)">
+      <rect x="0" y="0" width="36" height="36" rx="6" fill="#e6f0ff" stroke="#2b2b2b"/>
+      <path d="M6 22 L30 6" stroke="#2b2b2b" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="8" cy="20" r="3" fill="#2b2b2b" />
+    </g>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(260,100)">
+    <path d="M0 0 L80 0" stroke="#2b2b2b" stroke-width="3" fill="none" />
+    <path d="M80 0 L70 -7 L70 7 Z" class="arrow" transform="translate(0,0)" />
+  </g>
+
+  <!-- Box 2: Store output -->
+  <g transform="translate(360,40)">
+    <rect class="box" width="200" height="140" />
+    <text class="title" x="20" y="40">2) Store output</text>
+    <text class="label" x="20" y="70">System saves full output with an ID</text>
+    <text class="small" x="20" y="100">e.g. {id: "tool_007", tokens: 1200}</text>
+    <!-- small database icon -->
+    <g transform="translate(150,18)">
+      <rect x="0" y="0" width="36" height="36" rx="6" fill="#fff0e6" stroke="#2b2b2b"/>
+      <ellipse cx="18" cy="10" rx="14" ry="6" fill="#ffd9b3" stroke="#2b2b2b"/>
+      <rect x="2" y="12" width="32" height="18" fill="#ffd9b3" stroke="#2b2b2b"/>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(620,100)">
+    <path d="M0 0 L80 0" stroke="#2b2b2b" stroke-width="3" fill="none" />
+    <path d="M80 0 L70 -7 L70 7 Z" class="arrow" />
+  </g>
+
+  <!-- Box 3: Placeholder / Hide -->
+  <g transform="translate(720,40)">
+    <rect class="box" width="200" height="140" />
+    <text class="title" x="20" y="40">3) Replace with placeholder</text>
+    <text class="label" x="20" y="70">Context shows short line instead of full text</text>
+    <text class="small" x="20" y="100">tool_007 | ~1200 tokens | hidden</text>
+    <!-- small eye/hidden icon -->
+    <g transform="translate(150,18)">
+      <rect x="0" y="0" width="36" height="36" rx="6" fill="#e9f7ec" stroke="#2b2b2b"/>
+      <path d="M6 18 Q18 8 30 18 Q18 28 6 18 Z" fill="#c9f0c6" stroke="#2b2b2b"/>
+      <circle cx="18" cy="18" r="4" fill="#2b2b2b"/>
+    </g>
+  </g>
+
+  <!-- Down arrow to Box 4 (re-enable) -->
+  <g transform="translate(520,200)">
+    <path d="M120 -60 L120 0 L200 0" stroke="#2b2b2b" stroke-width="3" fill="none" />
+    <path d="M200 0 L190 -7 L190 7 Z" class="arrow" transform="translate(0,0)" />
+  </g>
+
+  <!-- Box 4: Re-enable on demand -->
+  <g transform="translate(360,200)">
+    <rect class="box" width="320" height="60" />
+    <text class="title" x="20" y="36">4) Re-enable on demand</text>
+    <text class="small" x="20" y="52">Agent calls manage_context(enable=["tool_007"]) → full original content restored</text>
+    <!-- small restore icon -->
+    <g transform="translate(280,12)">
+      <rect x="0" y="0" width="28" height="28" rx="6" fill="#eef6ff" stroke="#2b2b2b"/>
+      <path d="M6 18 L12 12 L18 18" stroke="#2b2b2b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 6 L12 22" stroke="#2b2b2b" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Footer caption -->
+  <text class="small" x="40" y="270">DTOC flow: Tool call → Store output with ID → Replace with placeholder (hide) → Re-enable when needed (lossless, reversible).</text>
+</svg>
