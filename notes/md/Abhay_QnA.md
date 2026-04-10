@@ -67,7 +67,9 @@ Abhay Chaturvedi --- AI/ML Engineer
 > delivered 5x faster inference and 50% lower memory overhead compared
 > to naive HuggingFace serving, especially for large-context workloads.
 >
-> [▶ Paged Attention Explained](https://www.youtube.com/watch?v=6uPnLkCiy5g)
+> [▶ Paged Attention Explained](https://www.youtube.com/watch?v=6uPnLkCiy5g) 
+> GPU memory fragmentation and KV Cache Waste are two issues.
+> paged attention solve by dividing into fixed size blocks and blocks gets dynamicaly replaced once completed. no bottleneck for waiting for batch and the request is not allocated sequentially but the dynamicaally in batches to occu[py whole memory and replace non working blocks].
 
 7.  **What is FlashAttention and how does it improve LLM inference?**
 
