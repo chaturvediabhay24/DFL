@@ -66,6 +66,8 @@ Abhay Chaturvedi --- AI/ML Engineer
 > batching requests dynamically. I chose it for GPT-OSS 120B because it
 > delivered 5x faster inference and 50% lower memory overhead compared
 > to naive HuggingFace serving, especially for large-context workloads.
+>
+> [▶ Paged Attention Explained](https://www.youtube.com/watch?v=6uPnLkCiy5g)
 
 7.  **What is FlashAttention and how does it improve LLM inference?**
 
