@@ -79,6 +79,11 @@ Abhay Chaturvedi --- AI/ML Engineer
 > reads/writes from O(N²) to O(N). This makes inference faster and
 > allows handling longer context windows within the same GPU memory
 > budget.
+> redundant computation to save memory bottleneck.
+> streaming softmax algorithm: we keep running max and and running sum to calcualate.
+> RECOMPUTATION: In backward pass we compute attention scores for Q and K. instead of storing in first pass. More compute to remove IO bottleneck.
+> FlashAttention-3 hopper gpu utilization: while computation one hop is loading data parallaly.
+> [▶ Flash Attention Explained](https://www.youtube.com/watch?v=eJn6zsbrqUM) 
 
 8.  **Explain your Generative AI Assistant Service architecture at
     Pegasystems.**
