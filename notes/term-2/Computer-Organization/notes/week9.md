@@ -464,7 +464,18 @@ Network topology: Router at top → two switches → PCs under each switch
 - Collision domains still matter in **Wi-Fi (wireless networks)** — because all devices share the same radio channel (a shared medium), collisions can still happen
 
 ---
+| Feature           | Hub     | Switch          | Router  |
+| ----------------- | ------- | --------------- | ------- |
+| OSI Layer         | Layer 1 | Layer 2         | Layer 3 |
+| Data Unit         | Bits    | Frames          | Packets |
+| Address Used      | None    | MAC             | IP      |
+| Intelligence      | ❌ None  | ✅ Medium        | ✅ High  |
+| Collision Domains | 1       | Many (per port) | Many    |
+| Broadcast Domains | 1       | 1 (default)     | Many    |
+| Duplex            | Half    | Full            | Full    |
+| Speed             | Slow    | Fast            | Depends |
 
+---
 ## 9. Revision Checklist
 
 - [ ] Can explain the difference between a repeater, hub, bridge, switch, and router in plain English
